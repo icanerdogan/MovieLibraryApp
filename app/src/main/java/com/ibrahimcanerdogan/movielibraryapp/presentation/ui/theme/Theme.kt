@@ -1,4 +1,4 @@
-package com.ibrahimcanerdogan.movielibraryapp.ui.theme
+package com.ibrahimcanerdogan.movielibraryapp.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

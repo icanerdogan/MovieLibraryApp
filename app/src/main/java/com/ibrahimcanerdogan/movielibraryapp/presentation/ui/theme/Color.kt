@@ -1,4 +1,4 @@
-package com.ibrahimcanerdogan.movielibraryapp.ui.theme
+package com.ibrahimcanerdogan.movielibraryapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
