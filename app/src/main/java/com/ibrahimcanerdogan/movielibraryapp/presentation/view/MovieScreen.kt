@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.ibrahimcanerdogan.movielibraryapp.presentation.ComposeScreen
 import com.ibrahimcanerdogan.movielibraryapp.presentation.MovieEvent
 import com.ibrahimcanerdogan.movielibraryapp.presentation.MovieViewModel
 
@@ -58,7 +59,7 @@ fun MovieScreen(
                 .padding(5.dp)) {
                 items(state.stateMovieList) { movie ->
                     MovieItem(movie = movie, onItemClick = {
-
+                        navController.navigate(ComposeScreen.MovieDetailScreen.route + "/${movie.movieSearchImdbID}")
                     })
                 }
             }
