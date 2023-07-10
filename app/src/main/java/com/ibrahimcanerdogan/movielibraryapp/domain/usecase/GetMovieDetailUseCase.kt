@@ -1,8 +1,6 @@
 package com.ibrahimcanerdogan.movielibraryapp.domain.usecase
 
-import com.ibrahimcanerdogan.movielibraryapp.data.remote.mapper.MovieMapper.toMovie
 import com.ibrahimcanerdogan.movielibraryapp.data.remote.mapper.MovieMapper.toMovieData
-import com.ibrahimcanerdogan.movielibraryapp.domain.model.Movie
 import com.ibrahimcanerdogan.movielibraryapp.domain.model.MovieData
 import com.ibrahimcanerdogan.movielibraryapp.domain.repository.MovieRepository
 import com.ibrahimcanerdogan.movielibraryapp.util.Resource
