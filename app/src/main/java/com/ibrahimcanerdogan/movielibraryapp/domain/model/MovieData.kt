@@ -1,14 +1,13 @@
-package com.ibrahimcanerdogan.movielibraryapp.data.remote.dto
+package com.ibrahimcanerdogan.movielibraryapp.domain.model
 
 import com.google.gson.annotations.SerializedName
+import com.ibrahimcanerdogan.movielibraryapp.data.remote.dto.MovieRatingDTO
 
 data class MovieData(
     @SerializedName("Title")
     val movieDataTitle: String,
     @SerializedName("Year")
     val movieDataYear: String,
-    @SerializedName("Rated")
-    val movieDataRated: String,
     @SerializedName("Released")
     val movieDataReleased: String,
     @SerializedName("Runtime")
@@ -27,30 +26,12 @@ data class MovieData(
     val movieDataLanguage: String,
     @SerializedName("Country")
     val movieDataCountry: String,
-    @SerializedName("Awards")
-    val movieDataAwards: String,
     @SerializedName("Poster")
     val movieDataPoster: String,
     @SerializedName("Ratings")
-    val movieDataRatings: List<MovieRating>,
-    @SerializedName("Metascore")
-    val movieDataMetascore: String,
+    val movieDataRatings: List<MovieRatingDTO>,
     @SerializedName("imdbRating")
-    val movieDataimdbRating: String,
-    @SerializedName("imdbVotes")
-    val movieDataImdbVotes: String,
-    @SerializedName("imdbID")
-    val movieDataImdbID: String,
-    @SerializedName("Type")
-    val movieDataType: String,
-    @SerializedName("DVD")
-    val movieDataDVD: String,
+    val movieDataImdbRating: String,
     @SerializedName("BoxOffice")
     val movieDataBoxOffice: String,
-    @SerializedName("Production")
-    val movieDataProduction: String,
-    @SerializedName("Website")
-    val movieDataWebsite: String,
-    @SerializedName("Response")
-    val movieDataResponse: String
 )
