@@ -7,11 +7,15 @@ import androidx.lifecycle.viewModelScope
 import com.ibrahimcanerdogan.movielibraryapp.domain.usecase.GetAllMoviesUseCase
 import com.ibrahimcanerdogan.movielibraryapp.domain.usecase.GetMovieDetailUseCase
 import com.ibrahimcanerdogan.movielibraryapp.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+@HiltViewModel
 class MovieViewModel @Inject constructor(
     private val getAllMoviesUseCase: GetAllMoviesUseCase,
     private val getMovieDetailUseCase: GetMovieDetailUseCase
@@ -25,7 +29,7 @@ class MovieViewModel @Inject constructor(
     private var job : Job? = null
 
     init {
-        getAllMovies(_state.value.stateSearch ?: "")
+        getAllMovies(_state.value.stateSearch ?: "Batman")
     }
 
     private fun getAllMovies(searchText : String) {
