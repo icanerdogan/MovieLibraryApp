@@ -5,33 +5,33 @@ import com.ibrahimcanerdogan.movielibraryapp.data.remote.dto.MovieRatingDTO
 
 data class MovieData(
     @SerializedName("Title")
-    val movieDataTitle: String,
+    val movieDataTitle: String?,
     @SerializedName("Year")
-    val movieDataYear: String,
+    val movieDataYear: String?,
     @SerializedName("Released")
-    val movieDataReleased: String,
+    val movieDataReleased: String?,
     @SerializedName("Runtime")
-    val movieDataRuntime: String,
+    val movieDataRuntime: String?,
     @SerializedName("Genre")
-    val movieDataGenre: String,
+    val movieDataGenre: String?,
     @SerializedName("Director")
-    val movieDataDirector: String,
+    val movieDataDirector: String?,
     @SerializedName("Writer")
-    val movieDataWriter: String,
+    val movieDataWriter: String?,
     @SerializedName("Actors")
-    val movieDataActors: String,
+    val movieDataActors: String?,
     @SerializedName("Plot")
-    val movieDataPlot: String,
+    val movieDataPlot: String?,
     @SerializedName("Language")
-    val movieDataLanguage: String,
+    val movieDataLanguage: String?,
     @SerializedName("Country")
-    val movieDataCountry: String,
+    val movieDataCountry: String?,
     @SerializedName("Poster")
-    val movieDataPoster: String,
+    val movieDataPoster: String?,
     @SerializedName("Ratings")
-    val movieDataRatings: List<MovieRatingDTO>,
+    val movieDataRatings: List<MovieRatingDTO>?,
     @SerializedName("imdbRating")
-    val movieDataImdbRating: String,
+    val movieDataImdbRating: String?,
     @SerializedName("BoxOffice")
-    val movieDataBoxOffice: String,
+    val movieDataBoxOffice: String?,
 )

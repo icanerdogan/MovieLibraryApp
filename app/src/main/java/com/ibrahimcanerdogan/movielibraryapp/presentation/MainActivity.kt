@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.ibrahimcanerdogan.movielibraryapp.presentation.ui.theme.MovieLibraryAppTheme
+import com.ibrahimcanerdogan.movielibraryapp.presentation.view.MovieDetailScreen
 import com.ibrahimcanerdogan.movielibraryapp.presentation.view.MovieScreen
 import com.ibrahimcanerdogan.movielibraryapp.util.Constant
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,10 +30,10 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = ComposeScreen.MovieScreen.route) {
                         composable(route = ComposeScreen.MovieScreen.route) {
-                            MovieScreen(navController = rememberNavController())
+                            MovieScreen(navController = navController)
                         }
-                        composable(route = ComposeScreen.MovieDetailScreen.route + "/${Constant.IMDB_ID}") {
-
+                        composable(route = ComposeScreen.MovieDetailScreen.route + "/{${Constant.IMDB_ID}}") {
+                            MovieDetailScreen()
                         }
                     }
                 }

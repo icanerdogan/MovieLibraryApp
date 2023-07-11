@@ -1,4 +1,4 @@
-package com.ibrahimcanerdogan.movielibraryapp.presentation
+package com.ibrahimcanerdogan.movielibraryapp.presentation.movie
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -10,8 +10,6 @@ import com.ibrahimcanerdogan.movielibraryapp.domain.usecase.GetMovieDetailUseCas
 import com.ibrahimcanerdogan.movielibraryapp.util.Constant
 import com.ibrahimcanerdogan.movielibraryapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -19,27 +17,18 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MovieViewModel @Inject constructor(
-    private val getAllMoviesUseCase: GetAllMoviesUseCase,
-    private val getMovieDetailUseCase: GetMovieDetailUseCase,
-    private val stateHandle: SavedStateHandle
+    private val getAllMoviesUseCase: GetAllMoviesUseCase
 ) : ViewModel() {
 
     private val _state = mutableStateOf<MovieState>(MovieState())
     val state : State<MovieState>
         get() = _state
 
-    private val _stateDetail = mutableStateOf<MovieState>(MovieState())
-    val stateDetail : State<MovieState>
-        get() = _stateDetail
-
     // Continuous search fixed.
     private var job : Job? = null
 
     init {
         getAllMovies(_state.value.stateSearch ?: "Batman")
-        stateHandle.get<String>(Constant.IMDB_ID)?.let {
-            getMovieDetail(it)
-        }
     }
 
     private fun getAllMovies(searchText : String) {
@@ -60,21 +49,6 @@ class MovieViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
-    private fun getMovieDetail(movieImdbId : String) {
-        getMovieDetailUseCase.execute(movieImdbId).onEach {
-            when(it) {
-                is Resource.Success -> {
-                    _stateDetail.value = MovieState(stateMovieDetail = it.data)
-                }
-                is Resource.Error -> {
-                    _stateDetail.value = MovieState(stateError = it.message ?: "Error!")
-                }
-                is Resource.Loading -> {
-                    _stateDetail.value = MovieState(stateIsLoading = false)
-                }
-            }
-        }.launchIn(viewModelScope)
-    }
     fun onEvent(movieEvent: MovieEvent) {
         when(movieEvent) {
             is MovieEvent.SearchEvent -> {
