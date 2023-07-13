@@ -56,27 +56,32 @@ fun MovieDetailScreen(
                 Text(
                     text = it?.movieDataTitle ?: "",
                     textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.h5,
                     modifier = Modifier.padding(14.dp),
                     color = Color.White
                 )
                 Text(
                     text = it?.movieDataActors ?: "",
                     textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle1,
                     modifier = Modifier.padding(14.dp),
                     color = Color.White)
                 Text(
                     text = it?.movieDataCountry ?: "",
                     textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle1,
                     modifier = Modifier.padding(14.dp),
                     color = Color.White)
                 Text(
                     text = it?.movieDataDirector ?: "",
                     textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle1,
                     modifier = Modifier.padding(14.dp),
                     color = Color.White)
                 Text(
                     text = it?.movieDataImdbRating ?: "",
                     textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle1,
                     modifier = Modifier.padding(14.dp),
                     color = Color.White)
 
