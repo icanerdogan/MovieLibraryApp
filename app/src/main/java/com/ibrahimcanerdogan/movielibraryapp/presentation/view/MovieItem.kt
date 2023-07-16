@@ -59,13 +59,15 @@ fun MovieItem(
                 text = movie.movieSearchTitle,
                 style = MaterialTheme.typography.subtitle1,
                 overflow = TextOverflow.Ellipsis,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = Color.Black
             )
             Text(
                 text = movie.movieSearchYear,
                 style = MaterialTheme.typography.subtitle2,
                 overflow = TextOverflow.Ellipsis,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = Color.Black
             )
         }
     }
