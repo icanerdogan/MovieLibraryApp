@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -61,28 +62,60 @@ fun MovieDetailScreen(
                     color = Color.White
                 )
                 Text(
+                    text = "- Actors -",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle2,
+                    modifier = Modifier.padding(5.dp),
+                    color = Color.LightGray
+                )
+                Text(
                     text = it?.movieDataActors ?: "",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.subtitle1,
-                    modifier = Modifier.padding(14.dp),
+                    modifier = Modifier.padding(5.dp),
                     color = Color.White)
+                Divider(color = Color.LightGray, thickness = 0.2.dp)
+                Text(
+                    text = "- Country -",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle2,
+                    modifier = Modifier.padding(5.dp),
+                    color = Color.LightGray
+                )
                 Text(
                     text = it?.movieDataCountry ?: "",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.subtitle1,
-                    modifier = Modifier.padding(14.dp),
+                    modifier = Modifier.padding(5.dp),
                     color = Color.White)
+                Divider(color = Color.LightGray, thickness = 0.2.dp)
+                Text(
+                    text = "- Director -",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle2,
+                    modifier = Modifier.padding(5.dp),
+                    color = Color.LightGray
+                )
+
                 Text(
                     text = it?.movieDataDirector ?: "",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.subtitle1,
-                    modifier = Modifier.padding(14.dp),
+                    modifier = Modifier.padding(5.dp),
                     color = Color.White)
+                Divider(color = Color.LightGray, thickness = 0.2.dp)
+                Text(
+                    text = "- IMDB Rate -",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.subtitle2,
+                    modifier = Modifier.padding(5.dp),
+                    color = Color.LightGray
+                )
                 Text(
                     text = it?.movieDataImdbRating ?: "",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.subtitle1,
-                    modifier = Modifier.padding(14.dp),
+                    modifier = Modifier.padding(5.dp),
                     color = Color.White)
 
             }

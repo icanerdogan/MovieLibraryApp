@@ -28,7 +28,7 @@ class MovieViewModel @Inject constructor(
     private var job : Job? = null
 
     init {
-        getAllMovies(_state.value.stateSearch ?: "Batman")
+        getAllMovies(_state.value.stateSearch ?: "Red")
     }
 
     private fun getAllMovies(searchText : String) {
